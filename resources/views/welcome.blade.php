@@ -12,8 +12,8 @@
 </head>
 <body>
 
-    <div class="container">
-        <a href="" class="btn btn-info" >New User</a>
+    <div class="container mt-4">
+        <a href="{{ route('user.create') }}" class="btn btn-info" >New User</a>
 
         <div class="table-responsive">
             <table class="table table-hover table-striped">
@@ -29,6 +29,7 @@
 
 
     </div>
+
 
 </body>
 </html>
