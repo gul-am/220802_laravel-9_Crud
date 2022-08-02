@@ -13,7 +13,19 @@
 <body>
 
     <div class="container">
-        <a href="" class="" ></a>
+        <a href="" class="btn btn-info" >New User</a>
+
+        <div class="table-responsive">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Gender</th>
+                </thead>
+
+            </table>
+        </div>
 
 
     </div>
