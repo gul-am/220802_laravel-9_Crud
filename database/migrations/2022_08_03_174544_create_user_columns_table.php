@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('contact');
-            $table->string('sector');
+            $table->string('sector', ['','Warehouse','Production','Freezers','Maintenance',])->default('Warehouse');
             $table->enum('gender', ['','M','F'])->default('M');
             $table->timestamps();
         });
