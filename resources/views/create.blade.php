@@ -36,7 +36,13 @@
                 </div>
                 <div class="mb-3">
                     <label  class="form-label">Sector</label>
-                    <input type="text" class="form-control" name="sector">
+                    <select name="gender" class="form-control">
+                        <option value=""></option>
+                        <option value="F">Warehouse</option>
+                        <option value="M">Production</option>
+                        <option value="F">Freezers</option>
+                        <option value="M">Maintenance</option>
+                    </select>
                     @error('sector')
                         <span class="text text-danger">{{ $message }}</span>
                     @enderror
