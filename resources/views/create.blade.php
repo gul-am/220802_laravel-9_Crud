@@ -16,6 +16,9 @@
             <a href="{{ route('home') }}" class="form-label">Home</a>
             <br>
             <h1>Create User</h1>
+            @if(session()->has('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
             <form action="{{ route('user.store') }}" method="post">
                 @csrf
                 @method('post')
@@ -36,12 +39,12 @@
                 </div>
                 <div class="mb-3">
                     <label  class="form-label">Sector</label>
-                    <select name="gender" class="form-control">
+                    <select name="sector" class="form-control">
                         <option value=""></option>
-                        <option value="F">Warehouse</option>
-                        <option value="M">Production</option>
-                        <option value="F">Freezers</option>
-                        <option value="M">Maintenance</option>
+                        <option value="Warehouse">Warehouse</option>
+                        <option value="Production">Production</option>
+                        <option value="Freezers">Freezers</option>
+                        <option value="Maintenance">Maintenance</option>
                     </select>
                     @error('sector')
                         <span class="text text-danger">{{ $message }}</span>
