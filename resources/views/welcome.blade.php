@@ -21,6 +21,7 @@
                     <th>#</th>
                     <th>Name</th>
                     <th>Contact</th>
+                    <th>Sector</th>
                     <th>Gender</th>
                 </thead>
 
