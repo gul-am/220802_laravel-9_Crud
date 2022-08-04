@@ -14,9 +14,9 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-}) -> name ('home');
-
-Route::get('new', [UserController::class, 'create']) -> name ('user.create');
-Route::post('store', [UserController::class, 'store']) -> name ('user.store');
+Route::get('/', [UserController::class, 'index']) -> name( 'home' );
+Route::get('new', [UserController::class, 'create']) -> name ( 'user.create' );
+Route::post('store', [UserController::class, 'store']) -> name ( 'user.store' );
+Route::delete('/delete/{user}', [UserController::class, 'delete']) -> name ('user.delete');
+Route::get('edit/{user}', [UserController::class, 'edit']) -> name ('user.edit');
+Route::put('update/{user}', [UserController::class, 'update']) -> name ('user.update');
