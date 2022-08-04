@@ -13,8 +13,10 @@
 <body>
 
     <div class="container mt-4">
-        <a href="{{ route('user.create') }}" class="btn btn-info" >New User</a>
-
+        <a href="{{ route('user.create') }}" class="btn btn-info">New User</a>
+        @if (session()->has('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
         <div class="table-responsive">
             <table class="table table-hover table-striped">
                 <thead>
@@ -23,7 +25,31 @@
                     <th>Contact</th>
                     <th>Sector</th>
                     <th>Gender</th>
+                    <th>Actions</th>
                 </thead>
+                <tbody>
+                    @forelse ($users as $item)
+                        <tr>
+                            <td>{{ $item->id }}</td>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->contact }}</td>
+                            <td>{{ $item->sector }}</td>
+                            <td>{{ $item->gender }}</td>
+                            <td>
+                                <a href="{{ route('user.edit', $item)}}" class="btn btn-primary btn-sm">Edit</a>
+                                <form action="{{ route('user.delete', $item) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            No data found!
+                        </tr>
+                    @endforelse
+                </tbody>
 
             </table>
         </div>
